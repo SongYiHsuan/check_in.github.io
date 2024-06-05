@@ -16,9 +16,9 @@
           document.getElementById("status").innerHTML = response;
         }).submitLocation(position.coords.latitude, position.coords.longitude);
       }
-    </script>
-  </head>
-  <body onload="getLocation()">
+  </script>
+</head>
+<body onload="getLocation()">
     <div id="status">Getting your location...</div>
-  </body>
+</body>
 </html>
