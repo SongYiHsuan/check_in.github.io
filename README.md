@@ -1,6 +1,5 @@
 <html>
   <head>
-    <title>員工打卡系統</title>
     <base target="_top">
     <script>
       function getLocation() {
