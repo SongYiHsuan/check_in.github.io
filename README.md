@@ -18,6 +18,6 @@
     </script>
   </head>
   <body onload="getLocation()">
-    <div id="status">Getting your location...</div>
+    <div id="status">打卡完成...</div>
   </body>
 </html>
