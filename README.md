@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
   <head>
     <base target="_top">
@@ -8,7 +9,7 @@
         } else {
           document.getElementById("status").innerHTML = "Geolocation is not supported by this browser.";
         }
-        }
+      }
 
       function sendPosition(position) {
         google.script.run.withSuccessHandler(function(response) {
@@ -18,6 +19,6 @@
     </script>
   </head>
   <body onload="getLocation()">
-    <div id="status">打卡完成...</div>
+    <div id="status">Getting your location...</div>
   </body>
 </html>
