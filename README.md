@@ -8,7 +8,7 @@
         } else {
           document.getElementById("status").innerHTML = "Geolocation is not supported by this browser.";
         }
-      }
+        }
 
       function sendPosition(position) {
         google.script.run.withSuccessHandler(function(response) {
