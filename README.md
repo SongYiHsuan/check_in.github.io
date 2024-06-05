@@ -1,5 +1,6 @@
 <html>
   <head>
+    <title>員工打卡系統</title>
     <base target="_top">
     <script>
       function getLocation() {
@@ -20,6 +21,6 @@
   </script>
   </head>
   <body onload="getLocation()">
-    <div id="status">Getting your location...</div>
+    <div id="status">打卡完成</div>
   </body>
 </html>
