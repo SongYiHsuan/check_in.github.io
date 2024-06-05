@@ -4,6 +4,7 @@
     <script>
       function getLocation() {
         if (navigator.geolocation) {
+          console.log('test')
           navigator.geolocation.getCurrentPosition(sendPosition);
         } else {
           document.getElementById("status").innerHTML = "Geolocation is not supported by this browser.";
