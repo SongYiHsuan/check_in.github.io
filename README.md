@@ -15,6 +15,11 @@
             document.getElementById("status").innerHTML = "Geolocation is not supported by this browser.";
           }
         }
+
+        function showError(error) {
+          console.log("Error getting location: " + error.message);
+          document.getElementById("status").innerHTML = "Error getting location: " + error.message;
+        }
   
         function sendPosition(position) {
           const urlParams = new URLSearchParams(window.location.search);
@@ -24,30 +29,33 @@
           const longitude = position.coords.longitude;
 
           const data = {
-          identifier: identifier,
-          action: action,
-          latitude: latitude,
-          longitude: longitude
+            identifier: identifier,
+            action: action,
+            latitude: latitude,
+            longitude: longitude
           };
           
           // 发送 POST 请求到 Google Apps Script
           fetch('https://script.google.com/macros/s/AKfycbxqkt8ELiKtoT478mwFty_17HtMbdgcEd7EUrYimH3ML1M86a_3BEQS6LlJFcUWWnQN6w/exec', {
-             method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(data)
-        })
-        .then(response => response.text())
-        .then(result => {
-          document.getElementById("status").innerHTML = result;
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
-      }
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          })
+          .then(response => response.text())
+          .then(result => {
+            console.log("Success: " + result);
+            document.getElementById("status").innerHTML = result;
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            document.getElementById("status").innerHTML = "Error: " + error;
+          });
+        }
   </script>
   </head>
-  <body onload="getLocation()">
+  <body>
+    <div id="status">Loading...</div>
   </body>
 </html>
