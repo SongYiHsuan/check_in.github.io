@@ -63,6 +63,6 @@
   </script>
   </head>
   <body>   
-      <div id="status"  style="color:blue">打卡完成</div>
+      <div id="status"  style="color:blue">打卡完成..</div>
 </body>
 </html>
