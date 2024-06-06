@@ -21,7 +21,7 @@
           const longitude = position.coords.longitude;
   
           // 发送 POST 请求到 Google Apps Script
-          fetch('https://script.google.com/macros/s/AKfycbwB8QPCnC7sLxnpoWQJfYjZY8pHm1pXdg9JEgxr5PvtwIvLgDCvGCn57GBHjkdKjDyiaQ/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbxhahXwXyLDc6QCsjTlc5XlktvNWDXzvADRJ7oMFREhWiy27g8T7KDG4Nu1G7DZFGcKXg/exec', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
