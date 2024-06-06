@@ -31,7 +31,7 @@
           };
           
           // 发送 POST 请求到 Google Apps Script
-          fetch('https://script.google.com/macros/s/AKfycbyZx81l20xu9-QVvM-nGepl3htd1xFZkHN1uZSHv9-3s36-joO4hdA8JajEejT-PgxvYw/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbxqkt8ELiKtoT478mwFty_17HtMbdgcEd7EUrYimH3ML1M86a_3BEQS6LlJFcUWWnQN6w/exec', {
              method: 'POST',
           headers: {
             'Content-Type': 'application/json'
