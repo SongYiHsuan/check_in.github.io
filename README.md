@@ -1,25 +1,73 @@
+<!DOCTYPE html>
 <html>
   <head>
     <base target="_top">
+  </head>
+  <body>
+    <h1 align="center" style="color:blue">員工打卡系統</h1>
+    
     <script>
+      // 页面加载完成后自动执行的函数
+      window.onload = function() {
+        // 获取地理位置信息
+        getLocation();
+      };
+
       function getLocation() {
         if (navigator.geolocation) {
-          console.log('test')
-          navigator.geolocation.getCurrentPosition(sendPosition);
-          console.log('test2')
+          navigator.geolocation.getCurrentPosition(sendPosition, showError);
         } else {
           document.getElementById("status").innerHTML = "Geolocation is not supported by this browser.";
         }
       }
 
       function sendPosition(position) {
-        google.script.run.withSuccessHandler(function(response) {
-          document.getElementById("status").innerHTML = response;
-        }).submitLocation(position.coords.latitude, position.coords.longitude);
+        const latitude = position.coords.latitude;
+        const longitude = position.coords.longitude;
+
+        // 发送 POST 请求到 Google Apps Script
+        fetch('https://script.google.com/macros/s/AKfycbxX6zXToaxoBZitKp5wJ8U-7_Hr8A1EiyY-pFA4NQfzCF6FdFcZcRpyGGbf9WB-wKBVmA/exec', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: 'latitude=' + latitude + '&longitude=' + longitude
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.text();
+        })
+        .then(data => {
+          // 处理服务器返回的数据
+          console.log(data);
+        })
+        .catch(error => {
+          // 捕获并处理请求失败的情况
+          console.error('There was a problem with the fetch operation:', error);
+        });
       }
-  </script>
-  </head>
-  <body onload="getLocation()">
-    <div id="status">打卡完成</div>
+
+      function showError(error) {
+        switch(error.code) {
+          case error.PERMISSION_DENIED:
+            document.getElementById("status").innerHTML = "User denied the request for Geolocation.";
+            break;
+          case error.POSITION_UNAVAILABLE:
+            document.getElementById("status").innerHTML = "Location information is unavailable.";
+            break;
+          case error.TIMEOUT:
+            document.getElementById("status").innerHTML = "The request to get user location timed out.";
+            break;
+          case error.UNKNOWN_ERROR:
+            document.getElementById("status").innerHTML = "An unknown error occurred.";
+            break;
+        }
+      }
+    </script>
+
+    <!-- 用于显示状态信息 -->
+    <div id="status" align="center" style="color:blue">正在获取位置...</div>
   </body>
 </html>
