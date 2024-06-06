@@ -2,9 +2,7 @@
   <head>
     <base target="_top">
     <script>
-      // 页面加载完成后自动执行的函数
       window.onload = function() {
-        // 获取地理位置信息
         getLocation();
       };
 
@@ -12,6 +10,7 @@
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(sendPosition, showError);
         } else {
+          console.log("Geolocation is not supported by this browser.");
           document.getElementById("status").innerHTML = "Geolocation is not supported by this browser.";
         }
       }
@@ -35,8 +34,7 @@
           longitude: longitude
         };
         
-        // 发送 POST 请求到 Google Apps Script
-        fetch('https://script.google.com/macros/s/AKfycbyaUss7bkieiBLvNiIbRQLd-xOjX5ivy0IaUiYVSGo14RjoDlWCvLoEp_xxprfkSIUjmw/exec', {
+        fetch('https://script.google.com/macros/s/AKfycbzT3ayxviafV-rEBnBhL84ITt4YMUNIbnVdhQXSn28JJKSTHCkS0DdCagkOfvTox-KPUw/exec', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
