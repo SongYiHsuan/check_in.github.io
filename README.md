@@ -51,7 +51,7 @@
           document.getElementById("status").innerHTML = "Error: " + error;
         });
       }
-    </script>
+  </script>
   </head>
   <body>
     <div id="status">Loading...</div>
