@@ -29,12 +29,13 @@
             latitude: latitude,
             longitude: longitude
           };     
-          fetch('https://script.google.com/macros/s/AKfycbzmduCf_7446QdUKjcYyo-n_fClG0pPNzkLig0znBECrmmFCi1ooHhNLtgbxdTvcB4pJg/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbzQYSFYO_RfdrGFsRY41VPEg4WCt_hKRRUn6C1HwUpJwh--N891FKvtoS_lmaEvliZb8w/exec', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
+            mode: 'no-cors' 
           })
           .then(response => response.text())
           .then(result => {
