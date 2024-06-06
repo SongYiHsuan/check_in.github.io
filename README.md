@@ -17,51 +17,39 @@
         }
   
         function sendPosition(position) {
+          const urlParams = new URLSearchParams(window.location.search);
+          const identifier = urlParams.get('identifier');
+          const action = urlParams.get('action');
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
+
+          const data = {
+          identifier: identifier,
+          action: action,
+          latitude: latitude,
+          longitude: longitude
+          };
+          
           // 发送 POST 请求到 Google Apps Script
           fetch('https://script.google.com/macros/s/AKfycbwF9n3wAk8WWcwyUnCbq-CWsrnRdWBfdBfpmPYGD8OpZpUELHdPhZlkvAqh2Iapc32YSw/exec', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded'
-            },
-            body: 'latitude=' + latitude + '&longitude=' + longitude
-          })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error('Network response was not ok');
-            }
-            return response.text();
-          })
-          .then(data => {
-            // 处理服务器返回的数据
-            console.log(data);
-          })
-          .catch(error => {
-            // 捕获并处理请求失败的情况
-            console.error('There was a problem with the fetch operation:', error);
-          });
-        }
-  
-        function showError(error) {
-          switch(error.code) {
-            case error.PERMISSION_DENIED:
-              document.getElementById("status").innerHTML = "User denied the request for Geolocation.";
-              break;
-            case error.POSITION_UNAVAILABLE:
-              document.getElementById("status").innerHTML = "Location information is unavailable.";
-              break;
-            case error.TIMEOUT:
-              document.getElementById("status").innerHTML = "The request to get user location timed out.";
-              break;
-            case error.UNKNOWN_ERROR:
-              document.getElementById("status").innerHTML = "An unknown error occurred.";
-              break;
-          }
-        }
+             method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(data)
+        })
+        .then(response => response.text())
+        .then(result => {
+          document.getElementById("status").innerHTML = result;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }
   </script>
   </head>
-  <body>   
-      <div id="status"  style="color:blue">打卡完成...</div>
-</body>
+  <body onload="getLocation()">
+    <h1 align="center" style="color:blue">員工打卡系統</h1>
+    <div id="status" align="center" style="color:blue">正在打卡...</div>
+  </body>
 </html>
