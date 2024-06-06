@@ -21,7 +21,7 @@
           const longitude = position.coords.longitude;
   
           // 发送 POST 请求到 Google Apps Script
-          fetch('https://script.google.com/macros/s/AKfycbyrss_MS5dD-qHx-P-xk0gMSp2_j7eM2pLWmDTg5yXC5ipTAWFwKxTDgdBhbllZx7iqZA/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbzQvLzArt41e-yGbaafEaKacGeD6e03BgJroxfmT5AtoaBI_JLo4Xp3kJD80doeV_dRLA/exec', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/x-www-form-urlencoded'
@@ -63,6 +63,6 @@
   </script>
   </head>
   <body>   
-      <div id="status"  style="color:blue">打卡完成</div>
+      <div id="status"  style="color:blue">打卡完成..</div>
 </body>
 </html>
