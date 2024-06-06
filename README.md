@@ -49,7 +49,5 @@
   </script>
   </head>
   <body onload="getLocation()">
-    <h1 align="center" style="color:blue">員工打卡系統</h1>
-    <div id="status" align="center" style="color:blue">正在打卡...</div>
   </body>
 </html>
