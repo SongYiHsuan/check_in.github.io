@@ -1,9 +1,7 @@
 <html>
   <head>
     <base target="_top">
-  </head>
-  <body>   
-      <script>
+    <script>
         // 页面加载完成后自动执行的函数
         window.onload = function() {
           // 获取地理位置信息
@@ -63,5 +61,8 @@
           }
         }
   </script>
+  </head>
+  <body>   
+      <div id="status"  style="color:blue">打卡完成</div>
 </body>
 </html>
