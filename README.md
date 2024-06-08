@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
   <head>
     <base target="_top">
@@ -30,8 +29,7 @@
             latitude: latitude,
             longitude: longitude
           };
-          fetch('
-https://script.google.com/macros/s/AKfycbx-hm3O8zHhehqbgk5GmKCp4RRX7uJrlafsIV7A2i_ZzuGG29IfSkPIbAk3mz8GAfoAjA/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbx-hm3O8zHhehqbgk5GmKCp4RRX7uJrlafsIV7A2i_ZzuGG29IfSkPIbAk3mz8GAfoAjA/exec', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
