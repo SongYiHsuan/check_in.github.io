@@ -29,7 +29,7 @@
             latitude: latitude,
             longitude: longitude
           };
-          fetch('https://script.google.com/macros/s/AKfycbx-hm3O8zHhehqbgk5GmKCp4RRX7uJrlafsIV7A2i_ZzuGG29IfSkPIbAk3mz8GAfoAjA/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbxqRdDsjyPPI7Z4Vave3-R77DAQYKcjo1gczQOZ4C9yl2hXdFFKnKV4_R_ekDU2HQBGMQ/exec', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
