@@ -21,13 +21,13 @@
           const urlParams = new URLSearchParams(window.location.search);
             const identifier = urlParams.get('identifier');
             const action = urlParams.get('action');
-            const location = urlParams.get('location');
+            const location = urlParams.get('store');
             const latitude = position.coords.latitude;
             const longitude = position.coords.longitude;
             const data = {
                 identifier: identifier,
                 action: action,
-                location: location,
+                store: store,
                 latitude: latitude,
                 longitude: longitude
             };
