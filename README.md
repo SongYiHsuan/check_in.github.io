@@ -31,7 +31,7 @@
             longitude: longitude
           };
 
-          fetch('https://script.google.com/macros/s/AKfycbxcJfEXgsZTFrRH8MKzfEpW5AX4PVyF8IKIS1C3KI3CxppivkACzbgb6FFOonXxleauYw/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbx-hm3O8zHhehqbgk5GmKCp4RRX7uJrlafsIV7A2i_ZzuGG29IfSkPIbAk3mz8GAfoAjA/exec', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
