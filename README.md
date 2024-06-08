@@ -34,6 +34,7 @@
             headers: {
               'Content-Type': 'application/json'
             },
+            mode: 'no-cors', // 添加在这里
             body: JSON.stringify(data)
           })
           .then(response => response.text())
