@@ -20,18 +20,18 @@
         function sendPosition(position) {
           const urlParams = new URLSearchParams(window.location.search);
           const identifier = urlParams.get('identifier');
-          //const store = urlParams.get('store');
+          const store = urlParams.get('location');
           const action = urlParams.get('action');
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
           const data = {
             identifier: identifier,
-            //store:store,
+            location:location,
             action: action,
             latitude: latitude,
             longitude: longitude
           };
-          fetch('https://script.google.com/macros/s/AKfycbxzaBugtJz8xAWnqEF_9SNzBYl_FU8LBIviJNkhmqggEdZhFhIi9lj7dFslsjGVmHA6Vg/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbx90j7aBSlFUWU8Y-ASlEjK91FqvWGi8dXf6MfDcQzjexKB7zgPZD9l2efjIhEJ6vl9kw/exec', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
