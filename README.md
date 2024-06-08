@@ -6,7 +6,6 @@
         window.onload = function() {
           getLocation();
         };
-
         function getLocation() {
           if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(sendPosition, showError);
@@ -15,23 +14,18 @@
             document.getElementById("status").innerHTML = "Geolocation is not supported by this browser.";
           }
         }
-
         function showError(error) {
           console.log("Error getting location: " + error.message);
           document.getElementById("status").innerHTML = "Error getting location: " + error.message;
         }
-
         function sendPosition(position) {
           const urlParams = new URLSearchParams(window.location.search);
           const identifier = urlParams.get('identifier');
-          const store = urlParams.get('store');
           const action = urlParams.get('action');
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
-
           const data = {
             identifier: identifier,
-            store: store,
             action: action,
             latitude: latitude,
             longitude: longitude
