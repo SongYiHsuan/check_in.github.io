@@ -20,7 +20,7 @@
         function sendPosition(position) {
           const urlParams = new URLSearchParams(window.location.search);
           const identifier = urlParams.get('identifier');
-          const store = urlParams.get('location');
+          const location = urlParams.get('location');
           const action = urlParams.get('action');
           const latitude = position.coords.latitude;
           const longitude = position.coords.longitude;
