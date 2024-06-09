@@ -31,6 +31,7 @@
             latitude: latitude,
             longitude: longitude
           };
+          console.log('Sending data: ', data);
           fetch('https://script.google.com/macros/s/AKfycbynLpNE-YwYz3CWEN2JnplX-_lBemWLoqjR1j-ZPbrChKSwYDHjCCh_F18SGkyuHQXXFw/exec', {
             method: 'POST',
             headers: {
