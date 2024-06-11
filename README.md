@@ -43,7 +43,7 @@
           .then(response => response.text())
           .then(result => {
             console.log("Success: " + result);
-            document.getElementById("status").innerHTML = result;
+            document.getElementById("status").innerHTML = "打卡完成";
           })
           .catch(error => {
             console.error('Error:', error);
