@@ -32,7 +32,7 @@
             longitude: longitude
           };
           console.log('Sending data: ', data);
-          fetch('https://script.google.com/macros/s/AKfycbxoCqMq0-voTiGNBPua8sWhAmvwyQsZvI9vGt5im6Wq5laxfVXFf9HkE9K0Q_mcaGM8PA/exec', {
+          fetch('https://script.google.com/macros/s/AKfycbyzerpUKlUkVujL-o_eA1zU6O4BFPDWePyfGOLp_EMpPqLV90lBnMjQbTDBEB_XK9n5kA/exec', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
