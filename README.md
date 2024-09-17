@@ -1,6 +1,21 @@
 <html>
   <head>
     <base target="_top">
+    <style>
+      /* 设置图片居中的样式 */
+      .center-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%; /* 根据需要调整图片的宽度 */
+      }
+      /* 页面加载状态文字的样式 */
+      #status {
+        text-align: center;
+        font-size: 18px;
+        margin-top: 20px;
+      }
+    </style>
     <script>
         window.onload = function() {
           getLocation();
@@ -53,6 +68,11 @@
     </script>
   </head>
   <body>
+    <body>
+    <!-- 添加中心化的图片 -->
+    <img src="https://i.ibb.co/rGCQHSG/clock-in-image.png" alt="打卡图片" class="center-img">
+    <!-- 打卡状态文字 -->
     <div id="status">Loading...</div>
+  </body>
   </body>
 </html>
