@@ -15,6 +15,12 @@
         font-size: 18px;
         margin-top: 20px;
       }
+      #title {
+        text-align: center; /* 水平居中 */
+        font-size: 36px; /* 可以根据需要调整字体大小 */
+        margin-top: 20px; /* 根据需要调整标题的上边距 */
+        font-family: 'Arial', sans-serif; /* 可以选择适合的字体 */
+      }
     </style>
     <script>
         window.onload = function() {
