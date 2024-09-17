@@ -74,11 +74,10 @@
     </script>
   </head>
   <body>
-    <body>
+    <h1 id="title">溫暖員工打卡系統</h1>
     <!-- 添加中心化的图片 -->
     <img src="https://i.ibb.co/rGCQHSG/clock-in-image.png" alt="打卡图片" class="center-img">
     <!-- 打卡状态文字 -->
     <div id="status">Loading...</div>
-  </body>
   </body>
 </html>
